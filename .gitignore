@@ -1,0 +1,25 @@
+# Maven y compilados Java (el Maven Wrapper se conserva)
+/target/
+*.class
+
+# IntelliJ IDEA y su salida de compilacion
+/.idea/
+/out/
+*.iml
+*.iws
+*.ipr
+
+# Configuracion local y secretos
+/src/main/java/org/ezone/pae/pruebacorte2/database/ConexionBD.java
+.env
+.env.*
+!.env.example
+# JDBC: database.local.properties privado; database.example.properties versionable
+*.local.properties
+
+# Archivos temporales y del sistema
+*.tmp
+*~
+Thumbs.db
+Desktop.ini
+.DS_Store
