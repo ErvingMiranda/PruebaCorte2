@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="610.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.ezone.pae.pruebacorte2.controller.ProductoController">
+    <children>
+        <Label layoutX="20.0" layoutY="16.0" style="-fx-font-size: 14px; -fx-font-weight: bold;" text="Gestión de productos" />
+
+        <Label layoutX="20.0" layoutY="52.0" text="Código" />
+        <TextField fx:id="txtCodigo" layoutX="95.0" layoutY="47.0" prefHeight="26.0" prefWidth="145.0" promptText="Ej: P001" />
+
+        <Label layoutX="20.0" layoutY="84.0" text="Precio" />
+        <TextField fx:id="txtPrecio" layoutX="95.0" layoutY="79.0" prefHeight="26.0" prefWidth="145.0" promptText="0.00" />
+
+        <Label layoutX="20.0" layoutY="116.0" text="Categoría" />
+        <ComboBox fx:id="cmbCategoria" layoutX="95.0" layoutY="111.0" prefHeight="26.0" prefWidth="145.0" />
+
+        <Label layoutX="275.0" layoutY="52.0" text="Nombre" />
+        <TextField fx:id="txtNombre" layoutX="340.0" layoutY="47.0" prefHeight="26.0" prefWidth="170.0" promptText="Nombre del producto" />
+
+        <Label layoutX="275.0" layoutY="84.0" text="Stock" />
+        <TextField fx:id="txtStock" layoutX="340.0" layoutY="79.0" prefHeight="26.0" prefWidth="170.0" promptText="0" />
+
+        <HBox layoutX="20.0" layoutY="155.0" spacing="6.0">
+            <children>
+                <Button fx:id="btnNuevo" mnemonicParsing="false" onAction="#nuevoProducto" text="Nuevo / Limpiar" />
+                <Button fx:id="btnGuardar" mnemonicParsing="false" onAction="#guardarProducto" text="Guardar" />
+                <Button fx:id="btnActualizar" mnemonicParsing="false" onAction="#actualizarProducto" text="Actualizar" />
+                <Button fx:id="btnEliminar" mnemonicParsing="false" onAction="#eliminarProducto" text="Eliminar" />
+            </children>
+        </HBox>
+
+        <Separator layoutX="20.0" layoutY="198.0" prefWidth="760.0" />
+
+        <Label layoutX="20.0" layoutY="216.0" style="-fx-font-size: 14px; -fx-font-weight: bold;" text="Búsqueda y filtros" />
+
+        <Label layoutX="20.0" layoutY="252.0" text="Código o nombre" />
+        <TextField fx:id="txtFiltroTexto" layoutX="125.0" layoutY="247.0" prefHeight="26.0" prefWidth="155.0" promptText="Buscar..." />
+
+        <Label layoutX="300.0" layoutY="252.0" text="Categoría" />
+        <ComboBox fx:id="cmbFiltroCategoria" layoutX="375.0" layoutY="247.0" prefHeight="26.0" prefWidth="145.0" />
+
+        <CheckBox fx:id="chkConExistencias" layoutX="545.0" layoutY="251.0" mnemonicParsing="false" text="Solo con existencias" />
+
+        <HBox layoutX="20.0" layoutY="290.0" spacing="6.0">
+            <children>
+                <Button fx:id="btnBuscar" mnemonicParsing="false" onAction="#buscarProductos" text="Buscar" />
+                <Button fx:id="btnLimpiarFiltros" mnemonicParsing="false" onAction="#limpiarFiltros" text="Limpiar filtros" />
+                <Button fx:id="btnRecargar" mnemonicParsing="false" onAction="#recargarProductos" text="Recargar" />
+            </children>
+        </HBox>
+
+        <TableView fx:id="tblProductos" layoutX="20.0" layoutY="330.0" prefHeight="230.0" prefWidth="760.0">
+            <placeholder>
+                <Label text="Sin productos" />
+            </placeholder>
+            <columns>
+                <TableColumn fx:id="colId" prefWidth="60.0" text="ID" />
+                <TableColumn fx:id="colCodigo" prefWidth="100.0" text="Código" />
+                <TableColumn fx:id="colNombre" prefWidth="220.0" text="Nombre" />
+                <TableColumn fx:id="colCategoria" prefWidth="140.0" text="Categoría" />
+                <TableColumn fx:id="colPrecio" prefWidth="120.0" text="Precio" />
+                <TableColumn fx:id="colStock" prefWidth="115.0" text="Stock" />
+            </columns>
+        </TableView>
+
+        <Label layoutX="20.0" layoutY="576.0" text="Registros visibles:" />
+        <Label fx:id="lblContador" layoutX="130.0" layoutY="576.0" text="0" />
+    </children>
+</AnchorPane>

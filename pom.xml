@@ -38,6 +38,11 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.7.13</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -59,7 +64,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>org.ezone.pae.pruebacorte2/org.ezone.pae.pruebacorte2.HelloApplication
+                            <mainClass>org.ezone.pae.pruebacorte2/org.ezone.pae.pruebacorte2.ProductoApplication
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
