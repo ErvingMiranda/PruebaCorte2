@@ -12,7 +12,7 @@ import java.util.List;
 
 public class ProductoDAO {
 
-    // Consulta de productos con filtros
+    // Consulta los productos aplicando solo los filtros que el usuario haya indicado.
     public List<Producto> buscarProductos(
             String texto,
             String categoria,
@@ -93,7 +93,7 @@ public class ProductoDAO {
     }
 
 
-    // Validación de código duplicado
+    // Comprueba si un código ya existe; al actualizar puede excluirse el ID del producto seleccionado.
     public boolean existeCodigo(
             String codigo,
             Integer idProducto
@@ -139,6 +139,7 @@ public class ProductoDAO {
     }
 
 
+    // Inserta un producto nuevo y devuelve cuántas filas fueron afectadas por el INSERT.
     public int guardarProducto(Producto producto) throws SQLException {
 
         String sql = """
@@ -176,6 +177,7 @@ public class ProductoDAO {
     }
 
 
+    // Actualiza por id_producto para asegurar que solo se modifique el registro seleccionado.
     public int actualizarProducto(Producto producto) throws SQLException {
 
         String sql = """
@@ -213,6 +215,7 @@ public class ProductoDAO {
     }
 
 
+    // Elimina por id_producto y devuelve las filas afectadas para comprobar que el registro aún existía.
     public int eliminarProducto(int idProducto) throws SQLException {
 
         String sql = """
@@ -239,7 +242,7 @@ public class ProductoDAO {
     }
 
 
-    // Crear producto a partir del ResultSet
+    // Convierte la fila actual del ResultSet en un objeto Producto.
     private Producto crearProductoDesdeResultSet(
             ResultSet rs
     ) throws SQLException {
@@ -255,7 +258,7 @@ public class ProductoDAO {
     }
 
 
-    // Registrar operación y SQLState
+    // Registra la operación que falló y su SQLState para facilitar el diagnóstico sin mostrarlo en la interfaz.
     private void registrarError(
             String operacion,
             SQLException e
