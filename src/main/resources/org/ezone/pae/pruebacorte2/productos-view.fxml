@@ -24,7 +24,7 @@
 
         <HBox layoutX="20.0" layoutY="155.0" spacing="6.0">
             <children>
-                <Button fx:id="btnNuevo" mnemonicParsing="false" onAction="#nuevoProducto" text="Nuevo / Limpiar" />
+                <Button fx:id="btnNuevo" mnemonicParsing="false" onAction="#nuevoProducto" text="Limpiar campos" />
                 <Button fx:id="btnGuardar" mnemonicParsing="false" onAction="#guardarProducto" text="Guardar" />
                 <Button fx:id="btnActualizar" mnemonicParsing="false" onAction="#actualizarProducto" text="Actualizar" />
                 <Button fx:id="btnEliminar" mnemonicParsing="false" onAction="#eliminarProducto" text="Eliminar" />
