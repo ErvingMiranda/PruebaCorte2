@@ -10,12 +10,10 @@
 *.ipr
 
 # Configuracion local y secretos
-/src/main/java/org/ezone/pae/pruebacorte2/database/ConexionBD.java
+/database.properties
 .env
 .env.*
 !.env.example
-# JDBC: database.local.properties privado; database.example.properties versionable
-*.local.properties
 
 # Archivos temporales y del sistema
 *.tmp

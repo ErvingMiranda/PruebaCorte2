@@ -14,7 +14,7 @@ Práctica de inventario con búsqueda, filtros y operaciones CRUD.
 1. Instalar un JDK compatible y PostgreSQL. Comprobar `java -version` y configurar `JAVA_HOME` si es necesario.
 2. En PostgreSQL, ejecutar primero `CREATE DATABASE papeleria_campus;`, que aparece al inicio de `sql/estructura.sql`.
 3. Conectarse a **papeleria_campus** y ejecutar el resto de `sql/estructura.sql` para crear el esquema `inventario` y la tabla. Después ejecutar `sql/datos.sql` una sola vez para insertar los 12 productos iniciales.
-4. Copiar `src/main/java/org/ezone/pae/pruebacorte2/database/ConexionBD.java.example` como `ConexionBD.java` en la misma carpeta. Configurar localmente URL, usuario y contraseña. Este archivo está ignorado y no debe subirse a Git.
+4. Copiar `database.example.properties` como `database.properties` en la raíz del proyecto. Configurar ahí la URL, el usuario y la contraseña de PostgreSQL. `database.properties` está ignorado por Git y no debe subirse al repositorio.
 5. Desde la raíz del proyecto, en PowerShell:
 
    ```powershell
@@ -27,7 +27,7 @@ Práctica de inventario con búsqueda, filtros y operaciones CRUD.
 
 Interfaz FXML → `ProductoController` → `ProductoDAO` → PostgreSQL.
 Los resultados se convierten en objetos `Producto` y se muestran en el `TableView`.
-El DAO obtiene las conexiones mediante `ConexionBD`.
+El DAO obtiene las conexiones mediante `ConexionBD`, que lee la configuración local desde `database.properties`.
 
 ## Pruebas y apoyo
 
